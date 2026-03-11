@@ -121,8 +121,235 @@ namespace G_NET_12_OOP005
             #endregion
 
             #endregion
+            
+
+            #region Part 02
+
+            /*
+
+        //  Interface IPrintable 
+         public interface IPrintable
+         {
+            void Print();
+         }
 
 
+        // Interface IBookable 
+        public interface IBookable
+        {
+            bool Book();
+            bool Cancel();
+        }
+
+
+        //  Abstract Clas: Ticket 
+        public abstract class Ticket : IPrintable, IBookable, ICloneable
+        {
+            private static int counter = 1;
+
+            public int Id { get; set; }
+            public string MovieName { get; set; }
+            public double Price { get; set; }
+            public bool IsBooked { get; set; }
+
+            public Ticket(string movie, double price)
+            {
+                Id = counter++;
+                MovieName = movie;
+                Price = price;
+                IsBooked = false;
+            }
+
+            public double AfterTax()
+            {
+                return Price * 1.14;
+            }
+
+            public bool Book()
+            {
+                if (IsBooked)
+                    return false;
+
+                IsBooked = true;
+                return true;
+            }
+
+            public bool Cancel()
+            {
+                if (!IsBooked)
+                    return false;
+
+                IsBooked = false;
+                return true;
+            }
+
+            public abstract void Print();
+
+            public abstract object Clone();
+        }
+
+
+        // Class StandardTicket
+        public class StandardTicket : Ticket
+        {
+            public string Seat { get; set; }
+
+            public StandardTicket(string movie, double price, string seat)
+                : base(movie, price)
+            {
+                Seat = seat;
+            }
+
+            public override void Print()
+            {
+                Console.WriteLine($"[Ticket #{Id}] {MovieName} | Standard | Seat: {Seat} | Price: {Price} | After Tax: {AfterTax()} | Booked: {(IsBooked ? "Yes" : "No")}");
+            }
+
+            public override object Clone()
+            {
+                return new StandardTicket(MovieName, Price, Seat);
+            }
+        }
+
+
+        //  Class VIPTicket
+        public class VIPTicket : Ticket
+        {
+            public bool Lounge { get; set; }
+            public double Fee { get; set; }
+
+            public VIPTicket(string movie, double price, bool lounge, double fee)
+                : base(movie, price)
+            {
+                Lounge = lounge;
+                Fee = fee;
+            }
+
+            public override void Print()
+            {
+                Console.WriteLine($"[Ticket #{Id}] {MovieName} | VIP | Lounge: {(Lounge ? "Yes" : "No")} | Fee: {Fee} | Price: {Price} | After Tax: {AfterTax()} | Booked: {(IsBooked ? "Yes" : "No")}");
+            }
+
+            public override object Clone()
+            {
+                return new VIPTicket(MovieName, Price, Lounge, Fee);
+            }
+        }
+
+
+        //  Class IMAXTicket 
+        public class IMAXTicket : Ticket
+        {
+            public bool Is3D { get; set; }
+
+            public IMAXTicket(string movie, double price, bool is3D)
+                : base(movie, price)
+            {
+                Is3D = is3D;
+            }
+
+            public override void Print()
+            {
+                Console.WriteLine($"[Ticket #{Id}] {MovieName} | IMAX | 3D: {(Is3D ? "Yes" : "No")} | Price: {Price} | After Tax: {AfterTax()} | Booked: {(IsBooked ? "Yes" : "No")}");
+            }
+
+            public override object Clone()
+            {
+                return new IMAXTicket(MovieName, Price, Is3D);
+            }
+        }
+
+
+        //  Class Cinema 
+        public class Cinema
+        {
+            public List<Ticket> Tickets = new List<Ticket>();
+
+            public void Open()
+            {
+                Console.WriteLine("=== Cinema Opened ===");
+            }
+
+            public void Close()
+            {
+                Console.WriteLine("=== Cinema Closed ===");
+            }
+
+            public void AddTicket(Ticket t)
+            {
+                Tickets.Add(t);
+            }
+
+            public void PrintTickets()
+            {
+                Console.WriteLine("\n--- All Tickets ---");
+
+                foreach (var t in Tickets)
+                    t.Print();
+            }
+        }
+
+
+        //  Class BookingHelper 
+        public static class BookingHelper
+        {
+            public static void PrintAll(IPrintable[] items)
+            {
+                foreach (var item in items)
+                    item.Print();
+            }
+        }
+
+
+        //  Class: Program 
+        class Program
+        {
+            static void Main()
+            {
+                Cinema cinema = new Cinema();
+                cinema.Open();
+
+                StandardTicket t1 = new StandardTicket("Inception", 80, "A5");
+                VIPTicket t2 = new VIPTicket("Avengers", 200, true, 50);
+                IMAXTicket t3 = new IMAXTicket("Dune", 130, true);
+
+                t1.Book();
+                t2.Book();
+                t3.Book();
+
+                cinema.AddTicket(t1);
+                cinema.AddTicket(t2);
+                cinema.AddTicket(t3);
+
+                cinema.PrintTickets();
+
+                Console.WriteLine("\n--- Clone Test ---");
+
+                VIPTicket clone = (VIPTicket)t2.Clone();
+                clone.MovieName = "Interstellar";
+
+                Console.Write("Original : ");
+                t2.Print();
+
+                Console.Write("Clone    : ");
+                clone.Print();
+
+                Console.WriteLine("\n--- After Cancellation ---");
+
+                t1.Cancel();
+                t1.Print();
+
+                Console.WriteLine("\n--- BookingHelper.PrintAll ---");
+
+                IPrintable[] arr = { t1, t2, t3 };
+                BookingHelper.PrintAll(arr);
+
+                cinema.Close();
+            }
+        }
+
+        */
+            #endregion
 
 
         }
