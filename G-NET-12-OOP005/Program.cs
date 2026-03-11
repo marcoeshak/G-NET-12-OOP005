@@ -1,4 +1,8 @@
-﻿namespace G_NET_12_OOP005
+﻿using System.Runtime.Intrinsics.X86;
+using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace G_NET_12_OOP005
 {
     internal class Program
     {
@@ -26,16 +30,40 @@
 
             #endregion
 
+            #region Q 02
+            // A)==
+            /*
+            *The problem is that both IEnglishSpeaker and IArabicSpeaker have a method called Greet().
+            *This creates a method name conflict.
+            *Currently, the class Translator implements one method only:
+            *public void Greet()
+                 {
+            *      Console.WriteLine("Hello / Ahlan");
+            *     }
+            *So the same method is used for both interfaces, and it prints "Hello / Ahlan" instead of having different behavior for each language.
+            */
+
+            //B )
+
+            // We fix this by using Explicit Interface Implementation so each interface has its own implementation.
+
+
+            // C)
+
+            //   No, you cannot call translator.Greet() directly because the methods are implemented explicitly for the interfaces, not for the class itself.
+
+            // You must call them through the interface reference.
+
+        #endregion
 
 
 
 
-
-            #endregion
-
+        #endregion
 
 
 
-        }
+
+         }
     }
 }
