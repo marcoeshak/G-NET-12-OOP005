@@ -98,6 +98,27 @@ namespace G_NET_12_OOP005
 
             #endregion
 
+            #region Q 04
+
+            /*
+             
+            Output
+            Dev - Testing
+            QA - Testing
+
+            Explanation
+
+           The method MemberwiseClone() creates a shallow copy of the object.
+
+           That means:
+
+           Value - type fields are copied normally.
+
+           Reference - type fields copy the reference only, not the actual object
+            
+             */
+
+            #endregion
 
             #endregion
 
