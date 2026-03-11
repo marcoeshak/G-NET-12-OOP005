@@ -1,6 +1,8 @@
-﻿using System.Runtime.Intrinsics.X86;
+﻿using System.ComponentModel;
+using System.Runtime.Intrinsics.X86;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace G_NET_12_OOP005
 {
@@ -54,16 +56,54 @@ namespace G_NET_12_OOP005
 
             // You must call them through the interface reference.
 
-        #endregion
+            #endregion
+
+            #region  Q 03
+
+            /*
+             1) Shallow Copy
+
+             A shallow copy creates a new object, but it copies the references of reference - type fields instead of creating new objects.
+
+            This means both objects share the same referenced objects in memory.
+
+           
+           2) Deep Copy
+
+          A deep copy creates a completely independent copy of the object and all the objects it references.
+
+          This means a new object and new copies of all referenced objects are created.
+
+           When to use each one
+
+            Use Shallow Copy when:
+
+             The object contains only value types, or
+
+             Sharing the referenced objects does not cause problems.
+ 
+            Use Deep Copy when:
+
+           The object contains reference - type fields, and
+
+           You want a completely independent copy that does not affect the original object.
+
+           Risk of using Shallow Copy with reference-type fields
+
+           The main risk is that both objects will reference the same internal objects.
+
+           If one object modifies the referenced object, the change will also affect the other object, which may lead to unexpected behavior or bugs.
+
+            */
+
+            #endregion
+
+
+            #endregion
 
 
 
 
-        #endregion
-
-
-
-
-         }
+        }
     }
 }
